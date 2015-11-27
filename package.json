@@ -1,0 +1,52 @@
+{
+  "name": "decorator-router-express",
+  "version": "1.0.0",
+  "description": "Express strategy for decorator-router",
+  "main": "build/index.js",
+  "license": "MIT",
+  "repository": "mastilver/decorator-router-express",
+  "author": {
+    "name": "Thomas Sileghem",
+    "email": "tsileghem@neworbit.co.uk",
+    "url": "mastilver.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava",
+    "prebuild": "rimraf build",
+    "build": "babel index.js --out-dir build",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.5.0",
+    "babel": "^5.8.34",
+    "babel-core": "^5.8.34",
+    "decorator-router": "^1.2.3",
+    "express": "^4.13.3",
+    "rimraf": "^2.4.4",
+    "supertest": "^1.1.0",
+    "xo": "^0.11.2"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node"
+    ],
+    "space": 4,
+    "rules": {
+      "linebreak-style": 0
+    },
+    "ignores": [
+      "build/**"
+    ]
+  }
+}
