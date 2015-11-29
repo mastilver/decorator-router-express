@@ -1,6 +1,6 @@
 {
   "name": "decorator-router-express",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Express strategy for decorator-router",
   "main": "build/index.js",
   "license": "MIT",
