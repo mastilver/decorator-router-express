@@ -36,3 +36,10 @@ test('should have register: POST /test', t => {
         .expect(201)
         .expect('Created', t.end);
 });
+
+test('should have register: GET /forbidden', t => {
+    request(app)
+        .get('/forbidden')
+        .expect(403)
+        .expect('Forbidden', t.end);
+});

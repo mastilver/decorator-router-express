@@ -14,11 +14,28 @@ $ npm install --save decorator-router decorator-router-express
 
 Given a controller `controller/homeCtrl.js`
 ```js
-import { httpGet } from 'decorator-router';
+import {httpGet, middlewareFactory} from 'decorator-router';
+
+const isLoggedIn = middlewareFactory(function(res, req, next){
+    /*   check if user is logged in   */
+    next();
+});
+
+const isRole = middlewareFactory(role => function(res, req, next){
+    /*   check if user have the right role   */
+    next();
+});
 
 export default {
+    @isLoggedIn
     @httpGet('/')
     getIndex(req, res){
+        res.ok();
+    },
+
+    @isRole('admin')
+    @httpGet('/admin')
+    getAdminPortal(req, res){
         res.ok();
     }
 }
